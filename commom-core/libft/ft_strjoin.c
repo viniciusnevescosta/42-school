@@ -1,42 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/18 15:19:58 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/06/18 16:15:52 by vneves-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*heap;
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t 	i;
+	size_t	size;
 
 	if (!s1 || !s2)
 		return (NULL);
-
-	s1_len = 0;
-	while (s1[s1_len])
-		s1_len++;
-
-	s2_len = 0;
-	while (s2[s2_len])
-		s2_len++;
-
-	heap = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	heap = malloc(sizeof(char) * size);
 	if (!heap)
 		return (NULL);
-
-	i = 0;
-	while(s1[i])
-	{
-		heap[i] = s1[i];
-		i++;
-	}
-
-	i = 0;
-	while(s2[i])
-	{
-		heap[s1_len] = s2[i];
-		s1_len++;
-		i++;
-	}
-	
-	heap[s1_len] = '\0';
+	ft_strlcpy(heap, s1, size);
+	ft_strlcat(heap, s2, size);
 	return (heap);
 }

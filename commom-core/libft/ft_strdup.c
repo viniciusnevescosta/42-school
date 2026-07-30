@@ -1,25 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/18 15:19:52 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/06/18 16:12:52 by vneves-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
-	size_t	i;
+	size_t	len;
 	char	*s;
-	
-	i = 0;
-	while (s1[i])
-		i++;
 
-	s = (char *)malloc(sizeof(char) * (i + 1));
+	len = ft_strlen(s1);
+	s = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s)
 		return (NULL);
-
-	i = 0;
-	while (s1[i])
-	{
-		s[i] = s1[i];
-		i++;
-	}
-	s[i] = '\0';
-
+	ft_memcpy(s, s1, len + 1);
 	return (s);
 }

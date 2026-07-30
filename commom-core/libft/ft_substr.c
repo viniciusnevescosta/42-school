@@ -1,40 +1,32 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/18 15:20:45 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/06/18 16:19:06 by vneves-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	calc_str_size(size_t len, size_t total_len, unsigned int start);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	string_len;
-	size_t	real_len;
+	size_t	s_len;
 	char	*heap;
 
 	if (!s)
 		return (NULL);
-
-	string_len = ft_strlen(s);
-	if (start >= string_len)
-	{
-		heap = malloc(1);
-		if (!heap)
-			return (NULL);
-		heap[0] = '\0';
-		return (heap);
-	}
-
-	real_len = calc_str_size(len, string_len, start);
-	heap = malloc((real_len + 1) * sizeof(char));
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	heap = malloc(sizeof(char) * (len + 1));
 	if (!heap)
 		return (NULL);
-
-	ft_strlcpy(heap, s + start, real_len + 1);
-
+	ft_strlcpy(heap, s + start, len + 1);
 	return (heap);
-}
-
-size_t	calc_str_size(size_t len, size_t total_len, unsigned int start)
-{
-	if (len > total_len - start)
-		return (total_len - start);
-
-	return (len);
 }
