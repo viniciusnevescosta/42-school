@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 15:19:06 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*   Created: 2026/07/30 22:04:19 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/07/30 22:04:19 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_print_decimal(int n)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	long int	long_n;
+	char		res;
+	int			count;
+
+	long_n = n;
+	count = 0;
+	if (long_n < 0)
+	{
+		count++;
+		write(1, "-", 1);
+		long_n *= -1;
+	}
+	if (long_n > 9)
+		count += ft_print_decimal(long_n / 10);
+	res = (long_n % 10) + '0';
+	count += write(1, &res, 1);
+	return (count);
 }
+
+// int	main(void)
+// {
+// 	ft_print_decimal(255);
+// 	return (0);
+// }

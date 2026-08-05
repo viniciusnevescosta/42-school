@@ -6,7 +6,7 @@
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 15:19:41 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/06/18 16:05:00 by vneves-c         ###   ########.fr       */
+/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	ft_putnbr_fd(int n, int fd)
 		nb = -nb;
 	}
 	if (nb > 9)
-	{
 		ft_putnbr_fd(nb / 10, fd);
-	}
 	ft_putchar_fd((nb % 10) + '0', fd);
 }

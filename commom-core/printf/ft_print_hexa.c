@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 15:19:06 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*   Created: 2026/07/30 22:04:19 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/07/30 22:04:19 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_print_hexa(unsigned long n, char c)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	char		*base_convertion;
+	int			count;
+
+	count = 0;
+	if (c == 'x')
+		base_convertion = "0123456789abcdef";
+	else
+		base_convertion = "0123456789ABCDEF";
+	if (n >= 16)
+		count += ft_print_hexa(n / 16, c);
+	count += write(1, &base_convertion[n % 16], 1);
+	return (count);
 }

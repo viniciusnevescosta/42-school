@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 15:19:06 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*   Created: 2026/07/30 22:04:19 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/07/30 22:04:19 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_print_string(char *string)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	int	i;
+
+	i = 0;
+	if (!string)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (string[i])
+	{
+		write(1, &string[i], 1);
+		i++;
+	}
+	return (i);
 }

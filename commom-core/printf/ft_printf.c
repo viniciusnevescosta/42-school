@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 15:19:06 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*   Created: 2026/07/30 22:04:19 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/07/30 22:04:19 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_printf(const char *format, ...)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	va_list	args;
+	int		i;
+	int		count;
+
+	va_start(args, format);
+	i = 0;
+	count = 0;
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			count += ft_check_symbol(format[i + 1], &args);
+			i++;
+		}
+		else
+			count += write(1, &format[i], 1);
+		i++;
+	}
+	va_end(args);
+	return (count);
 }
