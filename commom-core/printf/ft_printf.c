@@ -23,14 +23,16 @@ int	ft_printf(const char *format, ...)
 	count = 0;
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			count += ft_check_symbol(format[i + 1], &args);
-			i++;
+			i += 2;
 		}
 		else
+		{
 			count += write(1, &format[i], 1);
-		i++;
+			i++;
+		}
 	}
 	va_end(args);
 	return (count);

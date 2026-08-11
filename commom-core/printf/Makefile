@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= printf.a
+NAME	= libftprintf.a
 
 CC		= cc
 CCFLAGS = -Wall -Wextra -Werror
@@ -26,7 +26,7 @@ all: ${NAME}
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: %.c ft_printf.h
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
