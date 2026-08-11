@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stddef.h>
 
 size_t	ft_strlen(char *s)
 {
@@ -42,7 +43,7 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int		words_total_size;
+	size_t	words_total_size;
 	char	*heap;
 	size_t	i;
 	size_t	j;
