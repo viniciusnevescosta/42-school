@@ -6,7 +6,7 @@
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 22:32:42 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/08/11 11:34:16 by vneves-c         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:02:05 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define GET_NEXT_LINE_H
 
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 

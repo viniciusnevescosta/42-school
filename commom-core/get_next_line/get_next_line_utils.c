@@ -6,12 +6,11 @@
 /*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 22:50:14 by vneves-c          #+#    #+#             */
-/*   Updated: 2026/07/31 21:41:03 by vneves-c         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:02:05 by vneves-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stddef.h>
 
 size_t	ft_strlen(char *s)
 {
