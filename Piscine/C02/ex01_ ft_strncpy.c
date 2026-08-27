@@ -1,28 +1,28 @@
 #include <stdio.h>
 
-char *ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
-int main(void)
+int	main(void)
 {
-    char dest[4] = "abc";
-    char src[4] = "abc";
-    unsigned int n = 2;
+	char dest[4] = "abc";
+	char src[4] = "abc";
+	unsigned int	n;
 
-    printf("%s", ft_strncpy(dest, src, n));
-    return (0);
+	n = 2;
+	printf("%s", ft_strncpy(dest, src, n));
+	return (0);
 }
 
-char *ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-    int i;
+	unsigned int	i;
 
-    i = 0;
-    while (src[i] && i <= n)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
-
-    return (dest);
+	i = 0;
+	while (src[i] && i <= n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

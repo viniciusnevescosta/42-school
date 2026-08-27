@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex02_ft_print_reverse_alphabet.c                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/05 09:28:28 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void    ft_print_reverse_alphabet(void);
+void	ft_print_reverse_alphabet(void);
 
-int main(void)
+int	main(void)
 {
-    ft_print_reverse_alphabet();
-    return (0);
+	ft_print_reverse_alphabet();
+	return (0);
 }
 
-void    ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
-    char    letter;
+	char	letter;
 
-    letter = 'z';
-    while (letter >= 'a')
-    {
-        write(1, &letter, 1);
-        letter--;
-    }
+	letter = 'z';
+	while (letter >= 'a')
+	{
+		write(1, &letter, 1);
+		letter--;
+	}
 }

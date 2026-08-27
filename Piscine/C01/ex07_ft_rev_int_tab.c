@@ -1,11 +1,22 @@
-void ft_rev_int_tab(int *tab, int size);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex07_ft_rev_int_tab.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vneves-c <vneves-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/05 09:28:28 by vneves-c          #+#    #+#             */
+/*   Updated: 2026/08/05 09:28:28 by vneves-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void)
+void	ft_rev_int_tab(int *tab, int size);
+
+int	main(void)
 {
-    return (0);
+	return (0);
 }
 
-void ft_rev_int_tab(int *tab, int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
-    
 }

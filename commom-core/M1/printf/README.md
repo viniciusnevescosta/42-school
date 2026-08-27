@@ -1,6 +1,6 @@
 *This project has been created as part of the 42 curriculum by vneves-c.*
 
-# ft_printf
+# ft\_printf
 
 ## Description
 
@@ -24,7 +24,7 @@ written.
 ### Supported conversions
 
 | Specifier | Output |
-|---|---|
+| --- | --- |
 | `%c` | a single character |
 | `%s` | a string (`(null)` if the pointer is `NULL`) |
 | `%p` | a `void *` pointer in hexadecimal, prefixed with `0x` (`(nil)` if `NULL`) |
@@ -129,51 +129,51 @@ no dynamic allocation at all.
 The project deliberately uses **no data structure beyond `va_list` and the format string
 itself**. There is no buffer, no struct, no allocation.
 
-* **`va_list`** is the only state carried across the parsing loop. It is passed to
+- **`va_list`** is the only state carried across the parsing loop. It is passed to
   `ft_check_symbol` **by address** (`va_list *`) rather than by value. This matters: on
   some ABIs `va_list` is an array type, and copying it into a callee then advancing it
   there would leave the caller's copy unchanged or in an undefined state. Passing the
   pointer guarantees that every `va_arg` advances the one and only cursor.
-* **A plain `int` counter** accumulates the return value. Since the subject forbids
+- **A plain `int` counter** accumulates the return value. Since the subject forbids
   reimplementing `printf`'s buffering, characters go straight to `write`, so nothing else
   needs to be stored.
 
 ### Why this design
 
-* **Dispatch table vs. if/else chain.** With only nine specifiers, a chain of comparisons
+- **Dispatch table vs. if/else chain.** With only nine specifiers, a chain of comparisons
   in `ft_check_symbol` is shorter, easier to read, and — because there is no indirect
   call — at least as fast as an array of function pointers. Each conversion still lives
   in its own file behind its own function, so adding a specifier means adding one file
   and one `else if`.
 
-* **Recursion for number conversion.** `ft_print_decimal`, `ft_print_unsigned` and
+- **Recursion for number conversion.** `ft_print_decimal`, `ft_print_unsigned` and
   `ft_print_hexa` all recurse on `n / base` before printing `n % base`. Digits are
   naturally produced least-significant-first, and recursion reverses them for free — no
   temporary buffer, no reversal loop. The recursion depth is bounded by the number of
   digits (at most 10 for a 32-bit decimal, 16 for a 64-bit pointer in hex), so the stack
   cost is negligible and constant-bounded.
 
-* **`long int` inside `ft_print_decimal`.** Negating `INT_MIN` as an `int` overflows,
+- **`long int` inside `ft_print_decimal`.** Negating `INT_MIN` as an `int` overflows,
   because `-INT_MIN` is not representable in 32 bits. The value is widened to `long`
   before the sign is stripped, which makes `INT_MIN` print correctly instead of invoking
   undefined behaviour.
 
-* **`unsigned long` in `ft_print_hexa`.** The same function serves both `%x`/`%X`
+- **`unsigned long` in `ft_print_hexa`.** The same function serves both `%x`/`%X`
   (32-bit `unsigned int`) and `%p` (64-bit address), so the parameter is the widest of
   the two. The base string — `"0123456789abcdef"` or its uppercase twin — is selected
   from the specifier itself, which avoids duplicating the conversion logic.
 
-* **One function per file.** Required by the 42 Norm and it keeps each conversion
+- **One function per file.** Required by the 42 Norm and it keeps each conversion
   independently testable.
 
 ## Resources
 
-* `man 3 printf` — the reference behaviour this project is compared against
-* `man 3 stdarg` — `va_start`, `va_arg`, `va_copy`, `va_end`
-* [C99 standard, §7.19.6.1 — the `fprintf` conversion specifications](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)
-* [cppreference — Variadic arguments](https://en.cppreference.com/w/c/variadic)
-* `man 2 write` — the only output syscall used here
-* The 42 Norm (`norminette`) — formatting rules applied to every file
+- `man 3 printf` — the reference behaviour this project is compared against
+- `man 3 stdarg` — `va_start`, `va_arg`, `va_copy`, `va_end`
+- [C99 standard, §7.19.6.1 — the `fprintf` conversion specifications](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)
+- [cppreference — Variadic arguments](https://en.cppreference.com/w/c/variadic)
+- `man 2 write` — the only output syscall used here
+- The 42 Norm (`norminette`) — formatting rules applied to every file
 
 ### Use of AI
 
