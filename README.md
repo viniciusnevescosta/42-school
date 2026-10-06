@@ -46,7 +46,7 @@ programming, and client-server development.
 
 ### Common Core
 
-| Milestone | Project | Scope |
+| Milestone | Project | Scope | Technology |
 | --- | --- | --- |
 | M0 | [Libft](https://github.com/viniciusnevescosta/Libft) | Custom implementation of commonly used C library functions. |
 | M1 | [ft_printf](https://github.com/viniciusnevescosta/ft_printf) | Implementation of a subset of the standard `printf` function. |
