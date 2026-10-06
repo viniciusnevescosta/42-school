@@ -41,8 +41,8 @@ programming, and client-server development.
 
 | Project | Scope | Technology |
 | --- | --- | --- |
-| [Piscine](https://github.com/viniciusnevescosta/Piscine) | C exercises completed during the admission program. | C |
-| [Piscine Reloaded](https://github.com/viniciusnevescosta/Piscine-Reloaded) | Repository reserved for the fundamentals review exercises. | C |
+| [Piscine](https://github.com/viniciusnevescosta/Piscine) | C exercises completed during the admission program. | C, Shell Script |
+| [Piscine Reloaded](https://github.com/viniciusnevescosta/Piscine-Reloaded) | Repository reserved for the fundamentals review exercises. | C, Shell Script |
 
 ### Common Core
 
