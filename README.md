@@ -39,18 +39,18 @@ programming, and client-server development.
 
 ### Piscine
 
-| Project | Scope |
-| --- | --- |
-| [Piscine](https://github.com/viniciusnevescosta/Piscine) | C exercises completed during the admission program. |
-| [Piscine Reloaded](https://github.com/viniciusnevescosta/Piscine-Reloaded) | Repository reserved for the fundamentals review exercises. |
+| Project | Scope | Technology |
+| --- | --- | --- |
+| [Piscine](https://github.com/viniciusnevescosta/Piscine) | C exercises completed during the admission program. | C |
+| [Piscine Reloaded](https://github.com/viniciusnevescosta/Piscine-Reloaded) | Repository reserved for the fundamentals review exercises. | C |
 
 ### Common Core
 
 | Milestone | Project | Scope | Technology |
-| --- | --- | --- |
-| M0 | [Libft](https://github.com/viniciusnevescosta/Libft) | Custom implementation of commonly used C library functions. |
-| M1 | [ft_printf](https://github.com/viniciusnevescosta/ft_printf) | Implementation of a subset of the standard `printf` function. |
-| M1 | [Get Next Line](https://github.com/viniciusnevescosta/Get-Next-Line) | Function that reads a file descriptor one line at a time. |
-| M1 | [Push_swap](https://github.com/viniciusnevescosta/Push_swap) | Collaborative sorting project using two stacks and a limited instruction set. |
-| M2 | [Born2beRoot](https://github.com/viniciusnevescosta/Born2beRoot) | System administration project focused on virtualization, security policies, and service configuration. |
-| M2 | [A-Maze-ing](https://github.com/viniciusnevescosta/A-Maze-ing) | Maze generator developed in Python. |
+| --- | --- | --- | --- |
+| M0 | [Libft](https://github.com/viniciusnevescosta/Libft) | Custom implementation of commonly used C library functions. | C |
+| M1 | [ft_printf](https://github.com/viniciusnevescosta/ft_printf) | Implementation of a subset of the standard `printf` function. | C |
+| M1 | [Get Next Line](https://github.com/viniciusnevescosta/Get-Next-Line) | Function that reads a file descriptor one line at a time. | C |
+| M1 | [Push_swap](https://github.com/viniciusnevescosta/Push_swap) | Collaborative sorting project using two stacks and a limited instruction set. | C |
+| M2 | [Born2beRoot](https://github.com/viniciusnevescosta/Born2beRoot) | System administration project focused on virtualization, security policies, and service configuration. | [UTM](https://mac.getutm.app), Debian 13, Shell Script |
+| M2 | [A-Maze-ing](https://github.com/viniciusnevescosta/A-Maze-ing) | Maze generator developed in Python. | Python |
