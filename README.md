@@ -53,4 +53,5 @@ programming, and client-server development.
 | M1 | [Get Next Line](https://github.com/viniciusnevescosta/Get-Next-Line) | Function that reads a file descriptor one line at a time. | C |
 | M1 | [Push_swap](https://github.com/viniciusnevescosta/Push_swap) | Collaborative sorting project using two stacks and a limited instruction set. | C |
 | M2 | [Born2beRoot](https://github.com/viniciusnevescosta/Born2beRoot) | System administration project focused on virtualization, security policies, and service configuration. | [UTM](https://mac.getutm.app), Debian 13, Shell Script |
+| M2 | [Python Modules](https://github.com/viniciusnevescosta/Python-Modules) | Python curriculum exercises organized as independent Git submodules. | Python |
 | M2 | [A-Maze-ing](https://github.com/viniciusnevescosta/A-Maze-ing) | Maze generator developed in Python. | Python |
