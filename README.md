@@ -54,5 +54,5 @@ programming, and client-server development.
 | M1 | [Push_swap](https://github.com/viniciusnevescosta/Push_swap) | Collaborative sorting project using two stacks and a limited instruction set. | C |
 | M2 | [Born2beRoot](https://github.com/viniciusnevescosta/Born2beRoot) | System administration project focused on virtualization, security policies, and service configuration. | [UTM](https://mac.getutm.app), Debian 13, Shell Script |
 | M2 | [Python Modules](https://github.com/viniciusnevescosta/Python-Modules) | Python curriculum exercises organized as independent Git submodules. | Python |
-| M2 | [A-Maze-ing](https://github.com/viniciusnevescosta/A-Maze-ing) | Maze generator developed in Python. | Python |
+| M2 | [A-Maze-ing](https://github.com/viniciusnevescosta/A-Maze-ing) | Collaborative maze generator project. | Python |
 | M2 | [Exam](https://github.com/viniciusnevescosta/rank02lings) | C exercises and mock exams to prepare for the Milestone 2 exam. | C |
